@@ -9,7 +9,7 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 
-class HomeController implements ControllerInterface
+class EncodeController implements ControllerInterface
 {
     /**
      * @param Request $request Requête HTTP
@@ -20,10 +20,14 @@ class HomeController implements ControllerInterface
      */
     public function execute(Request $request): string|null
     {
-        return TwigCore::getEnvironment()->render('home/home.html.twig',
+        $value = $request->getVars();
+        $encode = $value["encode"];
+        $base64 = base64_encode($encode);
+        return TwigCore::getEnvironment()->render('home/Encode.html.twig',
             [
-                'titre'   => 'Home',
-                'requete' => $request
+                'titre'   => '',
+                'requete' => $request,
+                'encode' => $base64,
             ]
         );
     }

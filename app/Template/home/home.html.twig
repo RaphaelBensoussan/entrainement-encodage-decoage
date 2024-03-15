@@ -4,5 +4,11 @@
 
 {% block content %}
     <h1>{{ titre }}</h1>
+    <div class="card border-warning mb-3" style="max-width: 20.7rem;">
+        <div class="card-header">Operations</div>
+        <div class="card-body">
+            <a href="/encode" class="btn btn-warning">Encode Message</a>
+            <a href="/decode" class="btn btn-warning">Decode Message</a>
+        </div>
+    </div>
 {% endblock %}
-
