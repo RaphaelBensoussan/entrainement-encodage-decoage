@@ -10,3 +10,7 @@ decode:
     uri: /decode
     controller: Controller\DecodeController
     httpMethod: [GET, POST]
+lipton:
+    uri: /lipton
+    controller: Controller\LiptonController
+    httpMethod: [GET]
